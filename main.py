@@ -31,11 +31,11 @@ while True:
     try:
         cv2.imshow("cropped", crop_img)
         resized = cv2.resize(img, (80,80), interpolation = cv2.INTER_AREA)
-        print(model.classify(resized))
+        # print(clf.classify(resized))
     except:
         pass
     
-    print(('happy','sad')[clf.predict(resized)])
+    print(('happy','sad')[clf.classify(resized)])
     # Stop if escape key is pressed
     k = cv2.waitKey(30) & 0xff
     if k==27:
