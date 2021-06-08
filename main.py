@@ -3,7 +3,6 @@ from joblib import load
 import numpy as np
 from skimage.feature import hog
 import model as clf
-# clf = load('filename.joblib') 
 # Load the cascade
 face_cascade = cv2.CascadeClassifier('base/haarcascade_frontalface_default.xml')
 
