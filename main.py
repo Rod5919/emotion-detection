@@ -2,8 +2,7 @@ import cv2
 from joblib import load
 import numpy as np
 from skimage.feature import hog
-import model
-
+import model as clf
 # clf = load('filename.joblib') 
 # Load the cascade
 face_cascade = cv2.CascadeClassifier('base/haarcascade_frontalface_default.xml')
@@ -37,7 +36,7 @@ while True:
     except:
         pass
     
-    # print(('happy','sad')[clf.predict(prepared_img)])
+    print(('happy','sad')[clf.predict(resized)])
     # Stop if escape key is pressed
     k = cv2.waitKey(30) & 0xff
     if k==27:
